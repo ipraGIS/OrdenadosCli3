@@ -2,14 +2,13 @@
   <div id="app">
     <div class="titulos">
       <h1>{{title}}</h1>
-      <h3>{{subtitle}}</h3>
+      <p>{{subtitle}}</p>
       <time-panel></time-panel>
-      <button class="boton reset" id="botonReset" v-on:click="$_reset">NUEVA PARTIDA</button>
+      <button class="boton reset" id="botonReset" v-on:click="$_reset">NUEVA</button>
       <info-panel></info-panel>
-      <button class="boton solve" id="botonSolve" v-on:click="$_solve">RESOLVER</button>
+      <button class="boton solve" id="botonSolve" v-on:click="$_solve">VER</button>
     </div>
-    <letras-panel></letras-panel>
-    <div></div>
+    <letras-panel></letras-panel>  
   </div>
 </template>
 
@@ -29,7 +28,9 @@ export default {
   data() {
     return {
       title: "Ordenando",
-      subtitle: "Tiene X segundos para adivinar de qué se trata...",
+      categoria: "",
+      segundos: 10, // valor por defecto
+      subtitle:"",
       jsonData: {}
     };
   },
@@ -53,34 +54,25 @@ export default {
       });
   },
   mounted() {
-    // const myjson = {
-    //   categoria: {
-    //     animales: ["Oso Panda", "Caracol", "Elefante", "Cocodrilo"],
-    //   },
-    //   segundos: "5"
-    // };
-
-    // let evt = document.createEvent("CustomEvent");
-    // evt.initCustomEvent("json-loaded", false, false, myjson);
-    // window.dispatchEvent(evt);
-    // this.subtitle = `Tiene ${evt.detail.segundos} segundos para adivinar de qué se trata...`;
-    // subtitleInicio = this.subtitle;
     const that = this;
     addEventListener("json-loaded", jsonHandler, true);
     let subtitleInicio;
     function jsonHandler(evt) {
       if (!evt.detail || !evt.detail.segundos) return;
-      that.subtitle = `Tiene ${evt.detail.segundos} segundos para adivinar de qué se trata...`;
+      that.segundos = evt.detail.segundos;
+      that.subtitle = `Tienes ${that.segundos} segundos para adivinar de qué ${that.categoria} se trata...`;
       subtitleInicio = that.subtitle;
     }
     that.$root.$on("finish-time", function() {
       that.subtitle = "¿ Quieres jugar de nuevo ?";
-      document.getElementById("botonReset").style.display = "inline-flex";
+      document.getElementById("botonReset").style.display = "inline";
       document.getElementById("botonSolve").style.display = "none";
     });
     that.$root.$on("reset-game", function() {
       that.subtitle = subtitleInicio;
     });
+
+    that.$root.$on("categoria-modificada", that.$_updateSubtitle.bind(that));
   },
   methods: {
     $_reset(e) {
@@ -89,39 +81,47 @@ export default {
     },
     $_solve() {
       this.$root.$emit("solve-word");
+    },
+    $_updateSubtitle(categoria) {
+      if (!categoria) return;
+      this.categoria = categoria;
+      this.subtitle = `Tienes ${this.segundos} segundos para adivinar de qué ${this.categoria} se trata...`;
     }
   }
 };
 </script>
 <style>
+body {
+  overflow: hidden;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
-  font-size: 22px;
+  margin-top: 40px;
 }
 
 .boton {
   position: relative;
+  font-size: 0.8em;
   display: none;
   border: none;
   color: white;
   font-weight: bold !important;
   text-align: center !important;
   text-decoration: none !important;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   color: #fff;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
 }
 
 .reset {
-  background-color: #4caf50; /* Green */
-  border: 1px solid #4caf50;
+  background-color: #00c853;; /* Green */
+  border: 1px solid #00c853;
   top: -10px;
 }
 
@@ -151,5 +151,53 @@ li {
 
 a {
   color: #42b983;
+}
+/* USO DE MEDIA QUERIES PARA DISEÑO RESPONSIVE */
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (min-width: 359px) {
+  body {
+    background-color: red;
+    font-size: 50px;
+  }
+}
+
+/*Smartphones (landscape) -----------*/
+@media only screen and (min-height: 321px) and (orientation: landscape) {
+  body {
+    background-color: green;
+    font-size: 30px;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  body {
+    background-color: yellow;
+    font-size: 25px;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  body {
+    background-color: orange;
+    font-size: 20px;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  body {
+    background-color: purple;
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1120px) {
+  body {
+    background-color: white;
+    font-size: 30px;
+  }
 }
 </style>
