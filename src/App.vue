@@ -2,7 +2,7 @@
   <div id="app">
     <div class="titulos">
       <h1>{{title}}</h1>
-      <p>{{subtitle}}</p>
+      <p style="word-spacing: 0px;">{{subtitle}}</p>
       <time-panel></time-panel>
       <button class="boton reset" id="botonReset" v-on:click="$_reset">NUEVA</button>
       <info-panel></info-panel>
@@ -157,7 +157,7 @@ a {
 /* Smartphones (portrait) ----------- */
 @media only screen and (min-width: 359px) {
   body {
-    background-color: red;
+    background-color:beige;
     font-size: 50px;
   }
 }

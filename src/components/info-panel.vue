@@ -1,13 +1,12 @@
 <template>
-  <div>
+  <div class="infopanel">
     <button ref="botonCategoria" class="boton-categoria" @click="$_infoPanel_botonCategoria">
       <svg style="width:24px;height:24px;vertical-align: sub" viewBox="0 0 24 24">
         <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
       </svg>
       <!-- Usando el componente svgpathicon para añadir svg a la app -->
       <!-- <svgpath-icon name="menu" />
-      <svgpath-icon name="menu-dot" /> -->
-      Categorías
+      <svgpath-icon name="menu-dot" />-->
     </button>
 
     <div v-show="showCategoria" ref="panelCategoria" id="panelCategorias" class="listaCategorias">
@@ -32,18 +31,20 @@
 <script src="./info-panel.js"></script>
 
 <style scoped>
+.infopanel {
+  top: 50%;
+  display: inline;
+}
 /* BEM: block Element Modifier */
 /* dejamos las fuentes sin definir para el diseño responsive*/
 .listaCategorias {
   /*font-size: 12px;*/
   display: inline-block;
-  width: 20%;
-  height: 30%;
-  margin: 30px 0 0 0;
-  padding: 6px;
-  left: 10%;
+  margin: 0px;
+  padding: 10px;
+  left: 20%;
   position: absolute;
-  font-size: 0.7em;
+  font-size: 0.5em;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
   overflow-y: auto;
@@ -52,7 +53,8 @@
 }
 
 .listaCategorias--parrafo {
-  margin-top: 20px;
+  margin-top: 0px;
+  margin-left: 20px;
   /*font-size: 18px;*/
   text-align: initial;
 }
@@ -62,20 +64,21 @@
   align-items: center;
 }
 .listaCategorias--list--input {
-  margin: 10px;
+  margin: 2px;
 }
 input[type="checkbox"] {
-  transform: scale(2);
-  margin: 20px;
+  transform: scale(1.2);
+  margin: 5px;
 }
 .boton-categoria {
   font-size: 0.5em;
-  background-color:#009624; /* Green */
-  border: 1px solid#009624;
+  background-color:#00c853;; /* Green */
+  border: 1px solid#00c853;;
   color: white;
+  z-index: 2;
   padding: 2px;
   position: absolute;
-  left: 10%;
+  left: 20%;
   /* padding: 30px 15px; */
   text-align: center;
   text-decoration: none;

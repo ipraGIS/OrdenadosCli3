@@ -6,7 +6,7 @@ export default {
   name: 'info-panel',
   data() {
     return {
-      info: 'Seleccione una categoría: ',
+      info: 'Seleccione una categoría ',
       categorias: [],
       checked: [],
       selectedValue: 'animales',

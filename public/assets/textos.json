@@ -1,15 +1,10 @@
 {
 	"categoria": {
-		"test":["Oso Panda", "Oso Panda","Oso Panda","Oso Panda","Oso Panda","Oso Panda"],
 		"animal": ["Águila Real", "Ballena", "Buho", "Cangrejo", "Canguro", "Caracol", "Cebra", "Cerdo", "Cocodrilo", "Conejo", "Delfín", "Elefante", "Gato", "Gorila", "Hipopótamo", "Jabalí", "Jirafa", "Koala", "León", "Lobo", "Medusa", "Mono", "Oso Panda", "Oveja", "Perro", "Ratón", "Rinoceronte", "Tiburón Blanco", "Tigre", "Vaca"],
 		"comida": ["Arroz tres delicias", "Bacalao al pil-pil", "Calamares", "Chuletas de cordero", "Codido", "Croquetas", "Espinacas con bechamel", "Guisantes con Jamón", "Judias verdes", "Lasaña", "Lentejas", "Macarrones con tomate", "Merluza en salsa verde", "Paella", "Perrito caliente", "Pisto", "Potaje", "Rissotto", "Salmorejo", "Tortilla de patata"],
 		"país": ["Argentina", "Australia", "Bolivia", "Bélgica", "Canada", "China", "Colombia", "Corea del sur", "Croacia", "Dinamarca", "Egipto", "Escocia", "España", "Finlandia", "Francia", "Grecia", "Italia", "Japón", "Jordania", "Kenia", "Marruecos", "Mongolia", "Nigeria", "Nueva Zelanda", "Paraguay", "Perú", "Portugal", "República Democrática el Congo", "Rusia", "Sudafrica", "Venezuela"],
-		"película": ["101 Dalmatas", "Aladdin", "Blancanieves y los siete enanitos", "Buscando a Nemo", "Cars", "Como entrenar a tu Dragón", "El Rey León", "El libro de la Selva", "Enredados", "Frozen", "Hotel Transilvania", "Ice Age", "Kunfú Panda", "La Bella y La Bestia", "La Cenicienta", "La Sirenita", "Los Increibles", "Madagascar", "Mostruos", "Peter Pan", "Ratatouille", "Rompe Ralf", "Shrek", "Toy Story", "Walle"],
-		"comida2": ["Arroz tres delicias", "Bacalao al pil-pil", "Calamares", "Chuletas de cordero", "Codido", "Croquetas", "Espinacas con bechamel", "Guisantes con Jamón", "Judias verdes", "Lasaña", "Lentejas", "Macarrones con tomate", "Merluza en salsa verde", "Paella", "Perrito caliente", "Pisto", "Potaje", "Rissotto", "Salmorejo", "Tortilla de patata"],
-		"comida3": ["Arroz tres delicias", "Bacalao al pil-pil", "Calamares", "Chuletas de cordero", "Codido", "Croquetas", "Espinacas con bechamel", "Guisantes con Jamón", "Judias verdes", "Lasaña", "Lentejas", "Macarrones con tomate", "Merluza en salsa verde", "Paella", "Perrito caliente", "Pisto", "Potaje", "Rissotto", "Salmorejo", "Tortilla de patata"],
-		"comida4": ["Arroz tres delicias", "Bacalao al pil-pil", "Calamares", "Chuletas de cordero", "Codido", "Croquetas", "Espinacas con bechamel", "Guisantes con Jamón", "Judias verdes", "Lasaña", "Lentejas", "Macarrones con tomate", "Merluza en salsa verde", "Paella", "Perrito caliente", "Pisto", "Potaje", "Rissotto", "Salmorejo", "Tortilla de patata"],
-		"comida5": ["Arroz tres delicias", "Bacalao al pil-pil", "Calamares", "Chuletas de cordero", "Codido", "Croquetas", "Espinacas con bechamel", "Guisantes con Jamón", "Judias verdes", "Lasaña", "Lentejas", "Macarrones con tomate", "Merluza en salsa verde", "Paella", "Perrito caliente", "Pisto", "Potaje", "Rissotto", "Salmorejo", "Tortilla de patata"]
+		"película": ["101 Dalmatas", "Aladdin", "Blancanieves y los siete enanitos", "Buscando a Nemo", "Cars", "Como entrenar a tu Dragón", "El Rey León", "El libro de la Selva", "Enredados", "Frozen", "Hotel Transilvania", "Ice Age", "Kunfú Panda", "La Bella y La Bestia", "La Cenicienta", "La Sirenita", "Los Increibles", "Madagascar", "Mostruos", "Peter Pan", "Ratatouille", "Rompe Ralf", "Shrek", "Toy Story", "Walle"]
 	},
-	"segundos": "5",
+	"segundos": "10",
 	"todas": false
 }

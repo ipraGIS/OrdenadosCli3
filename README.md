@@ -1,6 +1,6 @@
 # ordenados
 
-> juego de ordenados desarrollado con Vue
+> juego de ordenados desarrollado con VueCli
 
 ## Build Setup
 
